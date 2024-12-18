@@ -1,0 +1,44 @@
+:root {
+  --background: white;
+  --foreground: #171717;
+}
+
+[data-theme='dark'] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@property --var1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: white;
+}
+
+.horizontal-scroll-bar {
+  transition: --var1 .25s ease-in-out;
+
+  &:hover {
+    --var1: #00000066;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--var1);
+    border-radius: 999px;
+    border: 0 none #ffffff;
+  }
+}
+

@@ -1,0 +1,97 @@
+.customInput {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 8px;
+  border-width: 1px;
+  font-size: 14px;
+  line-height: 20px;
+  border-color: var(--color-gray-300);
+  cursor: text;
+
+  input {
+    background-color: transparent;
+    width: 100%;
+
+    &:focus-within {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: var(--color-gray-500);
+    }
+  }
+
+  &.smallInput {
+    padding: 5px 11px;
+    height: 32px;
+
+    &.hasLeftIcon {
+      input {
+        padding-left: 25px;
+      }
+    }
+  }
+
+  &.mediumInput {
+    padding: 7px 11px;
+    height: 36px;
+
+    &.hasLeftIcon {
+      input {
+        padding-left: 30px;
+      }
+    }
+  }
+
+  &.largeInput {
+    height: 40px;
+    padding: 9px 11px;
+
+    &.hasLeftIcon {
+      input {
+        padding-left: 30px;
+      }
+    }
+  }
+
+  &.isDisabled {
+    cursor: default;
+    border-color: var(--color-gray-300);
+    background-color: var(--color-gray-50);
+  }
+
+  &.hasError {
+    border-color: var(--color-red-900);
+  }
+
+  &.isValid {
+    border-color: var(--color-green-900);
+    background-color: var(--color-green-100);
+  }
+
+  &:not(.isDisabled) {
+    &:focus-within {
+      border-color: var(--color-blue-900);
+    }
+
+    @media(any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        border-color: var(--color-blue-900);
+      }
+    }
+  }
+
+  &.hasRightIcon:not(.hasChildren) {
+    input {
+      padding-right: 34px;
+    }
+  }
+
+  &.hasChildren {
+    input {
+      padding-right: var(--children-width);
+    }
+  }
+}

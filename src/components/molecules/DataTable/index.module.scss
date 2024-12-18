@@ -1,0 +1,59 @@
+.dataTable {
+  thead {
+    tr {
+      th {
+        padding: 0;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        border-bottom: 0.5px solid rgba(214, 219, 224, 1);
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 16px;
+        border-bottom: 0.5px solid rgba(214, 219, 224, 1);
+      }
+    }
+
+    tr:last-child {
+      td {
+        border-bottom-width: 0;
+      }
+    }
+  }
+
+  .resizer {
+    position: absolute;
+    top: calc(50% - 10px);
+    height: calc(100% - 25px);
+    width: 4px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: col-resize;
+    user-select: none;
+    touch-action: none;
+    transition: all .3s;
+    right: 0;
+  }
+
+  [class*="isResizing"] {
+    background: #005BFF;
+    opacity: 1;
+  }
+
+  @media (hover: hover) {
+    .resizer {
+      opacity: 0;
+    }
+
+    *:hover > .resizer {
+      opacity: 1;
+    }
+  }
+}
